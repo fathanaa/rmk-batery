@@ -89,6 +89,7 @@ Partial Class Form1
         Me.ComboBox_comPort = New System.Windows.Forms.ComboBox()
         Me.refreshButton = New System.Windows.Forms.Button()
         Me.TextBox_baudrate = New System.Windows.Forms.TextBox()
+        Me.disconn_btn = New System.Windows.Forms.Button()
         Me.TableLayoutPanel1.SuspendLayout()
         Me.GroupBox16.SuspendLayout()
         Me.GroupBox15.SuspendLayout()
@@ -625,18 +626,31 @@ Partial Class Form1
         '
         Me.Chart1.BackColor = System.Drawing.Color.Transparent
         ChartArea1.AxisX.Enabled = System.Windows.Forms.DataVisualization.Charting.AxisEnabled.[False]
+        ChartArea1.AxisX.Maximum = 100.0R
         ChartArea1.AxisX.MaximumAutoSize = 100.0!
         ChartArea1.AxisX.TitleForeColor = System.Drawing.Color.Transparent
         ChartArea1.AxisX2.Enabled = System.Windows.Forms.DataVisualization.Charting.AxisEnabled.[False]
-        ChartArea1.AxisY.Enabled = System.Windows.Forms.DataVisualization.Charting.AxisEnabled.[True]
+        ChartArea1.AxisY.Enabled = System.Windows.Forms.DataVisualization.Charting.AxisEnabled.[False]
+        ChartArea1.AxisY.IsMarginVisible = False
         ChartArea1.AxisY.LabelAutoFitMaxFontSize = 8
-        ChartArea1.AxisY.LogarithmBase = 5.0R
+        ChartArea1.AxisY.LabelStyle.ForeColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
+        ChartArea1.AxisY.LineColor = System.Drawing.Color.DarkGray
+        ChartArea1.AxisY.LogarithmBase = 2.0R
+        ChartArea1.AxisY.MajorGrid.LineColor = System.Drawing.Color.Red
         ChartArea1.AxisY.Maximum = 100.0R
         ChartArea1.AxisY.MaximumAutoSize = 100.0!
-        ChartArea1.AxisY.Minimum = 0R
         ChartArea1.AxisY.MinorGrid.Enabled = True
         ChartArea1.AxisY.MinorGrid.LineColor = System.Drawing.Color.Gainsboro
-        ChartArea1.AxisY2.Enabled = System.Windows.Forms.DataVisualization.Charting.AxisEnabled.[False]
+        ChartArea1.AxisY.TitleFont = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        ChartArea1.AxisY2.Enabled = System.Windows.Forms.DataVisualization.Charting.AxisEnabled.[True]
+        ChartArea1.AxisY2.IsLabelAutoFit = False
+        ChartArea1.AxisY2.LabelStyle.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        ChartArea1.AxisY2.LabelStyle.ForeColor = System.Drawing.Color.DimGray
+        ChartArea1.AxisY2.LineColor = System.Drawing.Color.Transparent
+        ChartArea1.AxisY2.MajorGrid.LineColor = System.Drawing.Color.Silver
+        ChartArea1.AxisY2.MaximumAutoSize = 100.0!
+        ChartArea1.AxisY2.MinorGrid.Enabled = True
+        ChartArea1.AxisY2.MinorGrid.LineColor = System.Drawing.Color.Gainsboro
         ChartArea1.Name = "ChartArea1"
         Me.Chart1.ChartAreas.Add(ChartArea1)
         Legend1.Enabled = False
@@ -649,9 +663,10 @@ Partial Class Form1
         Series1.ChartArea = "ChartArea1"
         Series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Area
         Series1.Color = System.Drawing.Color.FromArgb(CType(CType(100, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(255, Byte), Integer))
+        Series1.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Series1.Legend = "Legend1"
         Series1.Name = "meanChart"
-        Series1.ShadowColor = System.Drawing.Color.Black
+        Series1.ShadowColor = System.Drawing.Color.BlanchedAlmond
         Me.Chart1.Series.Add(Series1)
         Me.Chart1.Size = New System.Drawing.Size(648, 338)
         Me.Chart1.TabIndex = 7
@@ -693,15 +708,15 @@ Partial Class Form1
         Me.CircularProgressBar1.AnimationFunction = WinFormAnimation.KnownAnimationFunctions.Liner
         Me.CircularProgressBar1.AnimationSpeed = 500
         Me.CircularProgressBar1.BackColor = System.Drawing.Color.Transparent
-        Me.CircularProgressBar1.Font = New System.Drawing.Font("Microsoft Sans Serif", 36.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.CircularProgressBar1.ForeColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
-        Me.CircularProgressBar1.InnerColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
+        Me.CircularProgressBar1.Font = New System.Drawing.Font("Microsoft Sans Serif", 24.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.CircularProgressBar1.ForeColor = System.Drawing.Color.FromArgb(CType(CType(100, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.CircularProgressBar1.InnerColor = System.Drawing.Color.Transparent
         Me.CircularProgressBar1.InnerMargin = 2
         Me.CircularProgressBar1.InnerWidth = -1
-        Me.CircularProgressBar1.Location = New System.Drawing.Point(762, 448)
+        Me.CircularProgressBar1.Location = New System.Drawing.Point(741, 453)
         Me.CircularProgressBar1.MarqueeAnimationSpeed = 2000
         Me.CircularProgressBar1.Name = "CircularProgressBar1"
-        Me.CircularProgressBar1.OuterColor = System.Drawing.Color.Gray
+        Me.CircularProgressBar1.OuterColor = System.Drawing.Color.White
         Me.CircularProgressBar1.OuterMargin = -25
         Me.CircularProgressBar1.OuterWidth = 26
         Me.CircularProgressBar1.ProgressColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer))
@@ -744,11 +759,21 @@ Partial Class Form1
         Me.TextBox_baudrate.Size = New System.Drawing.Size(128, 20)
         Me.TextBox_baudrate.TabIndex = 12
         '
+        'disconn_btn
+        '
+        Me.disconn_btn.Location = New System.Drawing.Point(127, 295)
+        Me.disconn_btn.Name = "disconn_btn"
+        Me.disconn_btn.Size = New System.Drawing.Size(88, 23)
+        Me.disconn_btn.TabIndex = 13
+        Me.disconn_btn.Text = "Disconnect"
+        Me.disconn_btn.UseVisualStyleBackColor = True
+        '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1082, 788)
+        Me.Controls.Add(Me.disconn_btn)
         Me.Controls.Add(Me.TextBox_baudrate)
         Me.Controls.Add(Me.refreshButton)
         Me.Controls.Add(Me.ComboBox_comPort)
@@ -867,4 +892,5 @@ Partial Class Form1
     Friend WithEvents ComboBox_comPort As ComboBox
     Friend WithEvents refreshButton As Button
     Friend WithEvents TextBox_baudrate As TextBox
+    Friend WithEvents disconn_btn As Button
 End Class

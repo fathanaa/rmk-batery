@@ -5,6 +5,9 @@
 
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         TextBox_baudrate.Text = "9600"
+        disconn_btn.Enabled = False
+        ledBtnOn.Enabled = False
+        ledBtnOff.Enabled = False
     End Sub
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles connect_btn.Click
@@ -20,7 +23,10 @@
                 refreshButton.Enabled = False
                 ComboBox_comPort.Enabled = False
                 TextBox_baudrate.Enabled = False
-
+                connect_btn.Enabled = False
+                disconn_btn.Enabled = True
+                ledBtnOn.Enabled = True
+                ledBtnOff.Enabled = True
             End If
 
         Catch ex As Exception
@@ -42,7 +48,7 @@
     End Sub
 
     Private Sub Timer_Port_Tick(sender As Object, e As EventArgs) Handles Timer_Port.Tick
-        'Timer_Port.Interval = 1000
+        'Timer_Port.Interval = 860
         Try
             dataSplit = data_masuk.Split(":")
             arus_tb.Text = dataSplit(0)
@@ -68,6 +74,8 @@
                 Chart1.Series("meanChart").Points.RemoveAt(0)
             End If
 
+            CircularProgressBar1.Value = dataSplit(16)
+            CircularProgressBar1.Text = dataSplit(16)
 
         Catch ex As Exception
 
@@ -122,4 +130,21 @@
         End Try
     End Sub
 
+    Private Sub disconn_btn_Click(sender As Object, e As EventArgs) Handles disconn_btn.Click
+        Try
+            If SerialPort1.IsOpen Then
+                Timer_Port.Stop()
+                SerialPort1.Close()
+                refreshButton.Enabled = True
+                ComboBox_comPort.Enabled = True
+                TextBox_baudrate.Enabled = True
+                connect_btn.Enabled = True
+                ledBtnOn.Enabled = False
+                ledBtnOff.Enabled = False
+            End If
+        Catch ex As Exception
+
+        End Try
+
+    End Sub
 End Class
