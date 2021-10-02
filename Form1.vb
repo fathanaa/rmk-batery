@@ -1,13 +1,25 @@
-﻿Public Class Form1
+﻿Imports System
+Imports System.Data
+Imports System.Text
+Imports MySql.Data
+Imports MySql.Data.MySqlClient
+
+Public Class Form1
 
     Dim data_masuk As String
     Dim dataSplit As String()
+    Dim connStr As String = "server=localhost;user=root;database=sakila;port=3306;password=Faa!2qaZ;"
+    Dim conn As MySqlConnection = New MySqlConnection(connStr)
 
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         TextBox_baudrate.Text = "9600"
         disconn_btn.Enabled = False
         ledBtnOn.Enabled = False
         ledBtnOff.Enabled = False
+
+
+
+
     End Sub
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles connect_btn.Click
@@ -15,7 +27,7 @@
         SerialPort1.BaudRate = TextBox_baudrate.Text
 
         Try
-        SerialPort1.Open()
+            SerialPort1.Open()
             If SerialPort1.IsOpen() Then
                 connect_btn.ForeColor = Color.Green
                 Timer_Port.Enabled = True
@@ -90,6 +102,7 @@
             Activate()
         ElseIf result = DialogResult.Yes Then
             If SerialPort1.IsOpen Then
+                led_dataSent("2")
                 SerialPort1.Close()
                 Timer_Port.Enabled = False
                 Timer_Port.Stop()
@@ -147,4 +160,33 @@
         End Try
 
     End Sub
+
+    Private Sub dbtest_Button_Click(sender As Object, e As EventArgs) Handles dbtest_Button.Click
+        Try
+            dbtest_Label.Text = "Connecting..."
+            conn.Open()
+            dbtest_Label.Text = "rmkbattery  is open"
+            display()
+        Catch ex As Exception
+            Console.WriteLine(ex.ToString())
+        End Try
+        conn.Close()
+
+    End Sub
+
+    Public Sub display()
+        Try
+            Dim sql = "SELECT first_name,last_name FROM actor"
+            Dim smd As MySqlCommand = New MySqlCommand(sql, conn)
+            Dim rdr As MySqlDataReader = smd.ExecuteReader()
+            While rdr.Read()
+
+                rtb_db.Text = rdr(0) + rdr(1)
+            End While
+            rdr.Close()
+        Catch ex As Exception
+            rtb_db.Text = ex.ToString()
+        End Try
+    End Sub
+
 End Class

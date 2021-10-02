@@ -146,6 +146,16 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <Compile Include="rmkbatteryDataSet.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rmkbatteryDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="sakilaDataSet.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>sakilaDataSet.xsd</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Form1.resx">
@@ -170,6 +180,28 @@
     </None>
     <None Include="App.config" />
     <None Include="packages.config" />
+    <None Include="rmkbatteryDataSet.xsc">
+      <DependentUpon>rmkbatteryDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="rmkbatteryDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>rmkbatteryDataSet.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="rmkbatteryDataSet.xss">
+      <DependentUpon>rmkbatteryDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="sakilaDataSet.xsc">
+      <DependentUpon>sakilaDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="sakilaDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>sakilaDataSet.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="sakilaDataSet.xss">
+      <DependentUpon>sakilaDataSet.xsd</DependentUpon>
+    </None>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>

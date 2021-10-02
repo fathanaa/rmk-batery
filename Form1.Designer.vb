@@ -23,9 +23,9 @@ Partial Class Form1
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
-        Dim ChartArea1 As System.Windows.Forms.DataVisualization.Charting.ChartArea = New System.Windows.Forms.DataVisualization.Charting.ChartArea()
-        Dim Legend1 As System.Windows.Forms.DataVisualization.Charting.Legend = New System.Windows.Forms.DataVisualization.Charting.Legend()
-        Dim Series1 As System.Windows.Forms.DataVisualization.Charting.Series = New System.Windows.Forms.DataVisualization.Charting.Series()
+        Dim ChartArea2 As System.Windows.Forms.DataVisualization.Charting.ChartArea = New System.Windows.Forms.DataVisualization.Charting.ChartArea()
+        Dim Legend2 As System.Windows.Forms.DataVisualization.Charting.Legend = New System.Windows.Forms.DataVisualization.Charting.Legend()
+        Dim Series2 As System.Windows.Forms.DataVisualization.Charting.Series = New System.Windows.Forms.DataVisualization.Charting.Series()
         Me.TableLayoutPanel1 = New System.Windows.Forms.TableLayoutPanel()
         Me.GroupBox16 = New System.Windows.Forms.GroupBox()
         Me.v14_tb = New System.Windows.Forms.TextBox()
@@ -90,6 +90,11 @@ Partial Class Form1
         Me.refreshButton = New System.Windows.Forms.Button()
         Me.TextBox_baudrate = New System.Windows.Forms.TextBox()
         Me.disconn_btn = New System.Windows.Forms.Button()
+        Me.GroupBox18 = New System.Windows.Forms.GroupBox()
+        Me.dbtest_Label = New System.Windows.Forms.Label()
+        Me.dbtest_Button = New System.Windows.Forms.Button()
+        Me.dgv_db = New System.Windows.Forms.DataGridView()
+        Me.rtb_db = New System.Windows.Forms.RichTextBox()
         Me.TableLayoutPanel1.SuspendLayout()
         Me.GroupBox16.SuspendLayout()
         Me.GroupBox15.SuspendLayout()
@@ -109,6 +114,8 @@ Partial Class Form1
         Me.GroupBox1.SuspendLayout()
         CType(Me.Chart1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox17.SuspendLayout()
+        Me.GroupBox18.SuspendLayout()
+        CType(Me.dgv_db, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'TableLayoutPanel1
@@ -625,49 +632,49 @@ Partial Class Form1
         'Chart1
         '
         Me.Chart1.BackColor = System.Drawing.Color.Transparent
-        ChartArea1.AxisX.Enabled = System.Windows.Forms.DataVisualization.Charting.AxisEnabled.[False]
-        ChartArea1.AxisX.Maximum = 100.0R
-        ChartArea1.AxisX.MaximumAutoSize = 100.0!
-        ChartArea1.AxisX.TitleForeColor = System.Drawing.Color.Transparent
-        ChartArea1.AxisX2.Enabled = System.Windows.Forms.DataVisualization.Charting.AxisEnabled.[False]
-        ChartArea1.AxisY.Enabled = System.Windows.Forms.DataVisualization.Charting.AxisEnabled.[False]
-        ChartArea1.AxisY.IsMarginVisible = False
-        ChartArea1.AxisY.LabelAutoFitMaxFontSize = 8
-        ChartArea1.AxisY.LabelStyle.ForeColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
-        ChartArea1.AxisY.LineColor = System.Drawing.Color.DarkGray
-        ChartArea1.AxisY.LogarithmBase = 2.0R
-        ChartArea1.AxisY.MajorGrid.LineColor = System.Drawing.Color.Red
-        ChartArea1.AxisY.Maximum = 100.0R
-        ChartArea1.AxisY.MaximumAutoSize = 100.0!
-        ChartArea1.AxisY.MinorGrid.Enabled = True
-        ChartArea1.AxisY.MinorGrid.LineColor = System.Drawing.Color.Gainsboro
-        ChartArea1.AxisY.TitleFont = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        ChartArea1.AxisY2.Enabled = System.Windows.Forms.DataVisualization.Charting.AxisEnabled.[True]
-        ChartArea1.AxisY2.IsLabelAutoFit = False
-        ChartArea1.AxisY2.LabelStyle.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        ChartArea1.AxisY2.LabelStyle.ForeColor = System.Drawing.Color.DimGray
-        ChartArea1.AxisY2.LineColor = System.Drawing.Color.Transparent
-        ChartArea1.AxisY2.MajorGrid.LineColor = System.Drawing.Color.Silver
-        ChartArea1.AxisY2.MaximumAutoSize = 100.0!
-        ChartArea1.AxisY2.MinorGrid.Enabled = True
-        ChartArea1.AxisY2.MinorGrid.LineColor = System.Drawing.Color.Gainsboro
-        ChartArea1.Name = "ChartArea1"
-        Me.Chart1.ChartAreas.Add(ChartArea1)
-        Legend1.Enabled = False
-        Legend1.Name = "Legend1"
-        Me.Chart1.Legends.Add(Legend1)
+        ChartArea2.AxisX.Enabled = System.Windows.Forms.DataVisualization.Charting.AxisEnabled.[False]
+        ChartArea2.AxisX.Maximum = 100.0R
+        ChartArea2.AxisX.MaximumAutoSize = 100.0!
+        ChartArea2.AxisX.TitleForeColor = System.Drawing.Color.Transparent
+        ChartArea2.AxisX2.Enabled = System.Windows.Forms.DataVisualization.Charting.AxisEnabled.[False]
+        ChartArea2.AxisY.Enabled = System.Windows.Forms.DataVisualization.Charting.AxisEnabled.[False]
+        ChartArea2.AxisY.IsMarginVisible = False
+        ChartArea2.AxisY.LabelAutoFitMaxFontSize = 8
+        ChartArea2.AxisY.LabelStyle.ForeColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
+        ChartArea2.AxisY.LineColor = System.Drawing.Color.DarkGray
+        ChartArea2.AxisY.LogarithmBase = 2.0R
+        ChartArea2.AxisY.MajorGrid.LineColor = System.Drawing.Color.Red
+        ChartArea2.AxisY.Maximum = 100.0R
+        ChartArea2.AxisY.MaximumAutoSize = 100.0!
+        ChartArea2.AxisY.MinorGrid.Enabled = True
+        ChartArea2.AxisY.MinorGrid.LineColor = System.Drawing.Color.Gainsboro
+        ChartArea2.AxisY.TitleFont = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        ChartArea2.AxisY2.Enabled = System.Windows.Forms.DataVisualization.Charting.AxisEnabled.[True]
+        ChartArea2.AxisY2.IsLabelAutoFit = False
+        ChartArea2.AxisY2.LabelStyle.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        ChartArea2.AxisY2.LabelStyle.ForeColor = System.Drawing.Color.DimGray
+        ChartArea2.AxisY2.LineColor = System.Drawing.Color.Transparent
+        ChartArea2.AxisY2.MajorGrid.LineColor = System.Drawing.Color.Silver
+        ChartArea2.AxisY2.MaximumAutoSize = 100.0!
+        ChartArea2.AxisY2.MinorGrid.Enabled = True
+        ChartArea2.AxisY2.MinorGrid.LineColor = System.Drawing.Color.Gainsboro
+        ChartArea2.Name = "ChartArea1"
+        Me.Chart1.ChartAreas.Add(ChartArea2)
+        Legend2.Enabled = False
+        Legend2.Name = "Legend1"
+        Me.Chart1.Legends.Add(Legend2)
         Me.Chart1.Location = New System.Drawing.Point(27, 412)
         Me.Chart1.Name = "Chart1"
-        Series1.BackGradientStyle = System.Windows.Forms.DataVisualization.Charting.GradientStyle.TopBottom
-        Series1.BackSecondaryColor = System.Drawing.Color.White
-        Series1.ChartArea = "ChartArea1"
-        Series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Area
-        Series1.Color = System.Drawing.Color.FromArgb(CType(CType(100, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(255, Byte), Integer))
-        Series1.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Series1.Legend = "Legend1"
-        Series1.Name = "meanChart"
-        Series1.ShadowColor = System.Drawing.Color.BlanchedAlmond
-        Me.Chart1.Series.Add(Series1)
+        Series2.BackGradientStyle = System.Windows.Forms.DataVisualization.Charting.GradientStyle.TopBottom
+        Series2.BackSecondaryColor = System.Drawing.Color.White
+        Series2.ChartArea = "ChartArea1"
+        Series2.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Area
+        Series2.Color = System.Drawing.Color.FromArgb(CType(CType(100, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(255, Byte), Integer))
+        Series2.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Series2.Legend = "Legend1"
+        Series2.Name = "meanChart"
+        Series2.ShadowColor = System.Drawing.Color.BlanchedAlmond
+        Me.Chart1.Series.Add(Series2)
         Me.Chart1.Size = New System.Drawing.Size(648, 338)
         Me.Chart1.TabIndex = 7
         Me.Chart1.Text = "Chart1"
@@ -768,11 +775,59 @@ Partial Class Form1
         Me.disconn_btn.Text = "Disconnect"
         Me.disconn_btn.UseVisualStyleBackColor = True
         '
+        'GroupBox18
+        '
+        Me.GroupBox18.Controls.Add(Me.rtb_db)
+        Me.GroupBox18.Controls.Add(Me.dgv_db)
+        Me.GroupBox18.Controls.Add(Me.dbtest_Label)
+        Me.GroupBox18.Controls.Add(Me.dbtest_Button)
+        Me.GroupBox18.Location = New System.Drawing.Point(734, 130)
+        Me.GroupBox18.Name = "GroupBox18"
+        Me.GroupBox18.Size = New System.Drawing.Size(640, 291)
+        Me.GroupBox18.TabIndex = 14
+        Me.GroupBox18.TabStop = False
+        Me.GroupBox18.Text = "Database Test"
+        '
+        'dbtest_Label
+        '
+        Me.dbtest_Label.AutoSize = True
+        Me.dbtest_Label.Location = New System.Drawing.Point(88, 25)
+        Me.dbtest_Label.Name = "dbtest_Label"
+        Me.dbtest_Label.Size = New System.Drawing.Size(58, 13)
+        Me.dbtest_Label.TabIndex = 1
+        Me.dbtest_Label.Text = "dbtestlabel"
+        '
+        'dbtest_Button
+        '
+        Me.dbtest_Button.Location = New System.Drawing.Point(7, 20)
+        Me.dbtest_Button.Name = "dbtest_Button"
+        Me.dbtest_Button.Size = New System.Drawing.Size(75, 23)
+        Me.dbtest_Button.TabIndex = 0
+        Me.dbtest_Button.Text = "test"
+        Me.dbtest_Button.UseVisualStyleBackColor = True
+        '
+        'dgv_db
+        '
+        Me.dgv_db.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.dgv_db.Location = New System.Drawing.Point(7, 65)
+        Me.dgv_db.Name = "dgv_db"
+        Me.dgv_db.Size = New System.Drawing.Size(240, 150)
+        Me.dgv_db.TabIndex = 2
+        '
+        'rtb_db
+        '
+        Me.rtb_db.Location = New System.Drawing.Point(253, 65)
+        Me.rtb_db.Name = "rtb_db"
+        Me.rtb_db.Size = New System.Drawing.Size(296, 172)
+        Me.rtb_db.TabIndex = 3
+        Me.rtb_db.Text = ""
+        '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(1082, 788)
+        Me.ClientSize = New System.Drawing.Size(1386, 788)
+        Me.Controls.Add(Me.GroupBox18)
         Me.Controls.Add(Me.disconn_btn)
         Me.Controls.Add(Me.TextBox_baudrate)
         Me.Controls.Add(Me.refreshButton)
@@ -824,6 +879,9 @@ Partial Class Form1
         Me.GroupBox1.PerformLayout()
         CType(Me.Chart1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupBox17.ResumeLayout(False)
+        Me.GroupBox18.ResumeLayout(False)
+        Me.GroupBox18.PerformLayout()
+        CType(Me.dgv_db, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -893,4 +951,9 @@ Partial Class Form1
     Friend WithEvents refreshButton As Button
     Friend WithEvents TextBox_baudrate As TextBox
     Friend WithEvents disconn_btn As Button
+    Friend WithEvents GroupBox18 As GroupBox
+    Friend WithEvents dbtest_Label As Label
+    Friend WithEvents dbtest_Button As Button
+    Friend WithEvents rtb_db As RichTextBox
+    Friend WithEvents dgv_db As DataGridView
 End Class
