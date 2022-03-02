@@ -50,7 +50,7 @@
     Private Sub Timer_Port_Tick(sender As Object, e As EventArgs) Handles Timer_Port.Tick
         'Timer_Port.Interval = 860
         Try
-            dataSplit = data_masuk.Split(":")
+            dataSplit = data_masuk.Split(";")
             arus_tb.Text = dataSplit(0)
             temp_tb.Text = dataSplit(1)
             v01_tb.Text = dataSplit(2)
@@ -84,7 +84,8 @@
     End Sub
 
     Private Sub Button1_Click_1(sender As Object, e As EventArgs) Handles Button1.Click
-        Dim result As Integer = MessageBox.Show("Dow you wish to close this program ?", "Exit", MessageBoxButtons.YesNo)
+        Dim result As Integer = MessageBox.Show(
+            "Dow you wish to close this program ?", "Exit", MessageBoxButtons.YesNo)
 
         If result = DialogResult.No Then
             Activate()
