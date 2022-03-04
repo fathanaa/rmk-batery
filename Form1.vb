@@ -48,7 +48,7 @@
     End Sub
 
     Private Sub Timer_Port_Tick(sender As Object, e As EventArgs) Handles Timer_Port.Tick
-        'Timer_Port.Interval = 860
+        Timer_Port.Interval = 1000
         Try
             dataSplit = data_masuk.Split(";")
             arus_tb.Text = dataSplit(0)
